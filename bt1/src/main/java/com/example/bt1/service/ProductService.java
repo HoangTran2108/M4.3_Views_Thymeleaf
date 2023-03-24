@@ -29,10 +29,11 @@ public class ProductService implements IProductService {
 
     @Override
     public List<Product> findByName(String name) {
+        String regex = ".*" + name.toLowerCase().trim() + ".*";
         List<Product> productList = new ArrayList<>();
         Set<Map.Entry<Integer, Product>> entries = products.entrySet();
         for (Map.Entry<Integer, Product> entry : entries) {
-            if (entry.getValue().getName().equals(name)) {
+            if (entry.getValue().getName().toLowerCase().matches(regex)) {
                 productList.add(entry.getValue());
             }
         }

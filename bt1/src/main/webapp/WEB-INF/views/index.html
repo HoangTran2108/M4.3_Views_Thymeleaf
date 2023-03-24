@@ -9,8 +9,7 @@
         Add new product
     </a>
 </p>
-<form th:action="@{/product/search}" th:object="${products}"
-      method="get">
+<form th:action="@{/product/search}" th:object="${products}" method="get">
     <input type="text" name="name" >
     <input type = "submit" value="Search">
 </form>
